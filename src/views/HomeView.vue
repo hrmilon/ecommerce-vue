@@ -1,12 +1,14 @@
 <script setup>
+import HeroSection from '../components/HeroSection.vue'
+import ProductsVue from './ProductsVue.vue'
+
 
 </script>
 
 <template>
   <main>
-<div class="bg-red-500 p-5 font-light text-white">
-  Tailwind Worked + Vite
-  Welcome Home
-</div>
+    <HeroSection />
+    <ProductsVue />
+
   </main>
 </template>

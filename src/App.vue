@@ -1,18 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import NavbarVue from '@/components/Navigation/NavbarVue.vue';
+import SalesTop from './components/SalesTop.vue';
 </script>
 
 <template>
   <header>
+    <SalesTop />
     <div class="wrapper">
-      <div>
-        Welcome to Vue+Tailwind <br>
-        App.vue is always render
-      </div>
-      <nav class="flex justify-center">
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <NavbarVue />
     </div>
   </header>
 

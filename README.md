@@ -1,13 +1,20 @@
-### Vue Scaffolding with
-- router installed
-- pinia installed
+### MVP
+# Designing with Tailwind 
 
-## Get Start Your Project
-- define in route and its corresponds View
-- in View it can contains Components
-- App.vue always run whatever url you visited
+## 📌 Todo  
+- Add Nav bar 
+- Add Hero  
+- Add Products Listing 
+---
 
-- Customize
-   - App.vue
-   - Home.vue
-   - About.vue
+## 📖 Learn  
+- Grid is powerfull for list 
+- flex and grid combination is widely used  
+
+---  
+
+## 💪 Challenge & Solution  
+- positioning and good looking ui
+
+**Solution:** Here is the solution 
+- Positioning helps

@@ -1,0 +1,132 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "hashed_password"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "description": "Over-ear noise-canceling wireless headphones",
+      "price": 99.99,
+      "category": "Electronics",
+      "image": "https://picsum.photos/150?random=1"
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "description": "Latest model smartphone with 128GB storage",
+      "price": 599.99,
+      "category": "Electronics",
+      "image": "https://picsum.photos/150?random=2"
+    },
+    {
+      "id": 3,
+      "name": "Laptop",
+      "description": "High-performance laptop for gaming and work",
+      "price": 899.99,
+      "category": "Electronics",
+      "image": "https://picsum.photos/150?random=3"
+    },
+    {
+      "id": 4,
+      "name": "Bluetooth Speaker",
+      "description": "Portable waterproof Bluetooth speaker",
+      "price": 49.99,
+      "category": "Audio",
+      "image": "https://picsum.photos/150?random=4"
+    },
+    {
+      "id": 5,
+      "name": "4K Television",
+      "description": "65-inch 4K Smart TV with built-in apps",
+      "price": 799.99,
+      "category": "Electronics",
+      "image": "https://picsum.photos/150?random=5"
+    },
+    {
+      "id": 6,
+      "name": "Gaming Console",
+      "description": "Next-gen gaming console with 1TB storage",
+      "price": 499.99,
+      "category": "Gaming",
+      "image": "https://picsum.photos/150?random=6"
+    },
+    {
+      "id": 7,
+      "name": "Smartwatch",
+      "description": "Fitness-focused smartwatch with heart rate monitor",
+      "price": 199.99,
+      "category": "Accessories",
+      "image": "https://picsum.photos/150?random=7"
+    },
+    {
+      "id": 8,
+      "name": "Instant Camera",
+      "description": "Polaroid instant camera with 10 film sheets",
+      "price": 89.99,
+      "category": "Photography",
+      "image": "https://picsum.photos/150?random=8"
+    },
+    {
+      "id": 9,
+      "name": "Electric Toothbrush",
+      "description": "Rechargeable electric toothbrush with multiple modes",
+      "price": 29.99,
+      "category": "Health & Beauty",
+      "image": "https://picsum.photos/150?random=9"
+    },
+    {
+      "id": 10,
+      "name": "Air Purifier",
+      "description": "Compact air purifier with HEPA filter",
+      "price": 149.99,
+      "category": "Home Appliances",
+      "image": "https://picsum.photos/150?random=10"
+    },
+    {
+      "id": 11,
+      "name": "Coffee Maker",
+      "description": "Coffee machine with programmable settings and grinder",
+      "price": 129.99,
+      "category": "Kitchen",
+      "image": "https://picsum.photos/150?random=11"
+    },
+    {
+      "id": 12,
+      "name": "Yoga Mat",
+      "description": "Non-slip yoga mat with extra padding",
+      "price": 19.99,
+      "category": "Sports & Outdoors",
+      "image": "https://picsum.photos/150?random=12"
+    },
+    {
+      "id": 13,
+      "name": "Backpack",
+      "description": "Durable backpack with multiple compartments",
+      "price": 39.99,
+      "category": "Fashion",
+      "image": "https://picsum.photos/150?random=13"
+    },
+    {
+      "id": 14,
+      "name": "Sneakers",
+      "description": "Comfortable running sneakers for men",
+      "price": 69.99,
+      "category": "Fashion",
+      "image": "https://picsum.photos/150?random=14"
+    },
+    {
+      "id": 15,
+      "name": "LED Desk Lamp",
+      "description": "Energy-efficient desk lamp with adjustable brightness",
+      "price": 24.99,
+      "category": "Furniture",
+      "image": "https://picsum.photos/150?random=15"
+    }
+  ]
+}
