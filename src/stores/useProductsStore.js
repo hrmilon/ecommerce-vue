@@ -1,15 +1,16 @@
 import axios from "axios";
+import { apiServices } from "@/services/apiServices";
 import { defineStore } from "pinia";
 
 export let useProductsStore = defineStore("products", {
   state: () => {
     return {
-      productsAll: []
+      productsAll: Array
     }
   },
   actions: {
     async apiGetProducts() {
-      let products = await axios.get('http://localhost:4000/products');
+      let products = await apiServices.products.getProuducts();
       this.$state.productsAll = products.data
     }
   },

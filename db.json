@@ -1,15 +1,113 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "John Doe",
       "email": "john@example.com",
       "password": "hashed_password"
     }
   ],
+  "cart": [
+    {
+      "id": "04cd",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "9729",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "1e9a",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "6cf0",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "3afd",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "4926",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "09df",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "c9a2",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "afea",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "03ae",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "6f89",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "95f9",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "0637",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "18ad",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "e65d",
+      "items": [
+        1
+      ]
+    },
+    {
+      "id": "2375",
+      "items": [
+        1
+      ]
+    }
+  ],
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Wireless Headphones",
       "description": "Over-ear noise-canceling wireless headphones",
       "price": 99.99,
@@ -17,7 +115,7 @@
       "image": "https://picsum.photos/150?random=1"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Smartphone",
       "description": "Latest model smartphone with 128GB storage",
       "price": 599.99,
@@ -25,7 +123,7 @@
       "image": "https://picsum.photos/150?random=2"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Laptop",
       "description": "High-performance laptop for gaming and work",
       "price": 899.99,
@@ -33,7 +131,7 @@
       "image": "https://picsum.photos/150?random=3"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Bluetooth Speaker",
       "description": "Portable waterproof Bluetooth speaker",
       "price": 49.99,
@@ -41,7 +139,7 @@
       "image": "https://picsum.photos/150?random=4"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "4K Television",
       "description": "65-inch 4K Smart TV with built-in apps",
       "price": 799.99,
@@ -49,7 +147,7 @@
       "image": "https://picsum.photos/150?random=5"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Gaming Console",
       "description": "Next-gen gaming console with 1TB storage",
       "price": 499.99,
@@ -57,7 +155,7 @@
       "image": "https://picsum.photos/150?random=6"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Smartwatch",
       "description": "Fitness-focused smartwatch with heart rate monitor",
       "price": 199.99,
@@ -65,7 +163,7 @@
       "image": "https://picsum.photos/150?random=7"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Instant Camera",
       "description": "Polaroid instant camera with 10 film sheets",
       "price": 89.99,
@@ -73,7 +171,7 @@
       "image": "https://picsum.photos/150?random=8"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Electric Toothbrush",
       "description": "Rechargeable electric toothbrush with multiple modes",
       "price": 29.99,
@@ -81,7 +179,7 @@
       "image": "https://picsum.photos/150?random=9"
     },
     {
-      "id": 10,
+      "id": "10",
       "name": "Air Purifier",
       "description": "Compact air purifier with HEPA filter",
       "price": 149.99,
@@ -89,7 +187,7 @@
       "image": "https://picsum.photos/150?random=10"
     },
     {
-      "id": 11,
+      "id": "11",
       "name": "Coffee Maker",
       "description": "Coffee machine with programmable settings and grinder",
       "price": 129.99,
@@ -97,7 +195,7 @@
       "image": "https://picsum.photos/150?random=11"
     },
     {
-      "id": 12,
+      "id": "12",
       "name": "Yoga Mat",
       "description": "Non-slip yoga mat with extra padding",
       "price": 19.99,
@@ -105,7 +203,7 @@
       "image": "https://picsum.photos/150?random=12"
     },
     {
-      "id": 13,
+      "id": "13",
       "name": "Backpack",
       "description": "Durable backpack with multiple compartments",
       "price": 39.99,
@@ -113,7 +211,7 @@
       "image": "https://picsum.photos/150?random=13"
     },
     {
-      "id": 14,
+      "id": "14",
       "name": "Sneakers",
       "description": "Comfortable running sneakers for men",
       "price": 69.99,
@@ -121,7 +219,7 @@
       "image": "https://picsum.photos/150?random=14"
     },
     {
-      "id": 15,
+      "id": "15",
       "name": "LED Desk Lamp",
       "description": "Energy-efficient desk lamp with adjustable brightness",
       "price": 24.99,
