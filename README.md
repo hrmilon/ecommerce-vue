@@ -1,1 +1,1 @@
-### Incompleted
+### Shadcn vue successfully installed

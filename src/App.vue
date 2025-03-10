@@ -1,14 +1,14 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import NavbarVue from '@/components/Navigation/NavbarVue.vue';
-import SalesTop from './components/SalesTop.vue';
+import SalesTop from './components/Navigation/SalesTop.vue';
 </script>
 
 <template>
   <header>
     <SalesTop />
     <div class="wrapper">
-      <NavbarVue />
+      <!-- <NavbarVue /> -->
     </div>
   </header>
 

@@ -1,7 +1,7 @@
 <script setup>
 import { useProductsStore } from '@/stores/useProductsStore';
 import { computed, onMounted } from 'vue';
-import ProductVue from '@/components/ProductVue.vue';
+import ProductVue from '@/components/Products/ProductVue.vue';
 
 let productsStore = useProductsStore();
 let getAllProducts = computed(() => productsStore.getProductsList)

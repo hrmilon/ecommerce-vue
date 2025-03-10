@@ -1,5 +1,5 @@
 <script setup>
-import SideBar from './SideBar.vue'
+import SideBar from '../Navigation/SideBar.vue'
 import HeroCarousel from './HeroCarousel.vue'
 </script>
 

@@ -1,6 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
-import HeroSection from '../components/HeroSection.vue'
+import HeroSection from '../components/Hero/HeroSection.vue'
 import ProductsVue from './ProductsVue.vue'
 import { useCartStore } from '@/stores/useCartStore';
 
@@ -14,7 +14,7 @@ let cart = useCartStore()
 <template>
   <main>
     <!-- <HeroSection /> -->
-    <ProductsVue />
+    <!-- <ProductsVue /> -->
 
   </main>
 </template>
