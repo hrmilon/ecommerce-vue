@@ -1,7 +1,18 @@
 <script setup>
 import { ref, watch } from 'vue';
-let isHovered = ref(false)
+import {
+	Card,
+	CardContent,
+	CardDescription,
+	CardFooter,
+	CardHeader,
+	CardTitle,
+} from '@/components/ui/card'
+import Button from '../ui/button/Button.vue';
+import { useToast } from '@/components/ui/toast/use-toast'
+const { toast } = useToast()
 
+let isHovered = ref(false)
 
 let addedToCart = (id) => {
 	let arr = JSON.parse(localStorage.getItem("ProductsId")) || [];
@@ -11,39 +22,45 @@ let addedToCart = (id) => {
 	console.log(JSON.parse(local));
 }
 
-
 let addedToFav = () => console.log("Favourite added")
-defineProps({
+
+const props = defineProps({
 	product: Object
 })
+
+let toastedMsg = () => {
+	toast({
+		title: 'Added to cart',
+		description: 'Checkout in the cart',
+	});
+}
+
 </script>
 
 <template>
-	<RouterLink to="#" @mouseenter="isHovered = true" @mouseleave="isHovered = false">
-		<div class="grid grid-rows-4 w-[210px] h-[260px] cursor-pointer" :class="{ 'shadow-2xl': isHovered }">
-			<div class="flex justify-center items-center bg-gray-200 row-span-3 rounded">
-				<img v-if="!isHovered" class="rounded" :src="product.image" alt="">
-				<div v-else class="text-black font-bold">
-					<RouterLink class="flex flex-col" to="#">
-						<button @click="addedToCart(product.id)"
-							class="bg-blue-700 text-white font-extralight px-2 rounded hover:bg-black cursor-pointer">
-							Add to Cart
-						</button>
-						<button @click="addedToFav"
-							class="bg-blue-700 text-white font-extralight px-2 rounded hover:bg-black cursor-pointer">
-							Favourite
-						</button>
-					</RouterLink>
-				</div>
-			</div>
-			<div class="flex flex-col justify-center px-1 font-mono">
-				<div class="font-semibold">{{ product.name }}</div>
-				<div class="flex gap-x-2">
-					<div class="font-light">${{ product.price }}</div>
-					<div>⭐⭐⭐⭐</div>
-					<div>(326)</div>
-				</div>
-			</div>
-		</div>
-	</RouterLink>
+	<div class="px-4 grid grid-cols-4 gap-2">
+		<Card class="w-60 my-2">
+			<RouterLink :to="{ name: 'products', params: { id: product.id } }">
+				<CardContent class="flex justify-center items-center">
+					<div>
+						<div class="">
+							<img loading="lazy" class="h-[150px] w-[200px] mt-4 rounded-sm" :src="product.image" alt="" srcset="">
+						</div>
+					</div>
+				</CardContent>
+				<CardContent>
+					<div class="flex flex-col items-center">
+						<div class="font-inter font-extralight">{{ product.name }}</div>
+						<div class="font-inter font-light">${{ product.price }}</div>
+					</div>
+				</CardContent>
+			</RouterLink>
+			<CardFooter class="flex justify-center">
+				<Button @click="toastedMsg">
+					Add to Cart
+				</Button>
+			</CardFooter>
+		</Card>
+	</div>
+
 </template>

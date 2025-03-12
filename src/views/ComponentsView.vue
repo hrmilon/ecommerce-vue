@@ -22,6 +22,7 @@ import {
 <template>
     <div class="mt-3 flex items-center justify-center ">
         <Card class="w-[350px]">
+            <Button >Hello</Button>
             <CardHeader>
                 <CardTitle>Create project</CardTitle>
                 <CardDescription>Deploy your new project in one-click.</CardDescription>

@@ -1,6 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ComponentsView from '@/views/ComponentsView.vue'
+import ProductVue from '@/components/Products/ProductVue.vue'
+import ProductID from '@/components/Products/ProductID.vue'
+import NotFoundVue from '@/components/NotFoundVue.vue'
+import AdminVue from '@/views/AdminView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -19,13 +23,23 @@ const router = createRouter({
       component: () => import('../views/AboutView.vue'),
     },
     {
-      // path: '/users/:id', 
-      // name: Product,
-      // component: User
-    },{
+      path: '/products/:id',
+      name: 'products',
+      component: ProductID
+    },
+    {
+      path: '/admin',
+      name: 'admin',
+      component: AdminVue,
+    },
+    {
       path: '/components',
       name: 'components',
-      component: ComponentsView,
+      component: ProductVue,
+    },
+    {
+      path: "/:pathMatch(.*)*",
+      component: NotFoundVue
     }
 
   ],

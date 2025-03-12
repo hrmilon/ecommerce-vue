@@ -14,7 +14,6 @@ let cart = useCartStore()
 <template>
   <main>
     <!-- <HeroSection /> -->
-    <!-- <ProductsVue /> -->
-
+    <ProductsVue />
   </main>
 </template>
