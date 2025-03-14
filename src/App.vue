@@ -1,22 +1,27 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import NavbarVue from '@/components/Navigation/NavbarVue.vue';
-import SalesTop from './components/Navigation/SalesTop.vue';
-import Toaster from './components/ui/toast/Toaster.vue';
-import FooterVue from './components/Navigation/FooterVue.vue';
+import { RouterLink, RouterView, useRoute } from 'vue-router'
+import AdminView from './views/AdminView.vue';
+import { computed } from 'vue';
+import DefaultLayout from './layout/DefaultLayout.vue';
+
+const route = useRoute();
+const layoutComponent = computed(() =>
+  route.meta.layout === 'admin' ? AdminView : DefaultLayout
+);
 </script>
 
 <template>
-  <header>
-    <SalesTop />
-    <div class="wrapper">
-      <NavbarVue />
-    </div>
-  </header>
-  <Toaster />
-  <RouterView />
-  <FooterVue />
+ <component :is="layoutComponent" />
+
+ <!-- reason task delgated to individual layout components -->
+<!-- <header>
+  <SalesTop />
+  <div class="wrapper">
+    <NavbarVue />
+  </div>
+</header>
+<Toaster />
+<RouterView />
+<FooterVue /> -->
 
 </template>
-
-<style scoped></style>

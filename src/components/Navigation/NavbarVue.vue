@@ -57,8 +57,8 @@ const components: { title: string, href: string, description: string }[] = [
 
   </div>
 
-  <div class="flex justify-center items-center py-3 shrink">
-    <NavigationMenu class="">
+  <div class="flex justify-center items-center py-3">
+    <NavigationMenu>
       <NavigationMenuList>
 
         <NavigationMenuItem class="mr-32">

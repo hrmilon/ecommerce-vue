@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/AppSidebar.vue";
-import TestView from "./TestView.vue";
 </script>
 
 <template>
@@ -11,6 +10,5 @@ import TestView from "./TestView.vue";
       <SidebarTrigger />
       <slot />
     </main>
-    <RouterView />
   </SidebarProvider>
 </template>

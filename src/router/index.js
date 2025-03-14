@@ -4,7 +4,8 @@ import ComponentsView from '@/views/ComponentsView.vue'
 import ProductVue from '@/components/Products/ProductVue.vue'
 import ProductID from '@/components/Products/ProductID.vue'
 import NotFoundVue from '@/components/NotFoundVue.vue'
-import AdminVue from '@/views/AdminView.vue'
+import AdminView from '@/views/AdminView.vue'
+import TestView from '@/views/TestView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -17,9 +18,6 @@ const router = createRouter({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/AboutView.vue'),
     },
     {
@@ -30,12 +28,19 @@ const router = createRouter({
     {
       path: '/admin',
       name: 'admin',
-      component: AdminVue,
+      component: TestView,
+      meta: { layout: 'admin' },
+      children: [
+        {
+          path: 'inbox', component: TestView,
+          meta: { layout: 'admin' }
+        },
+      ],
     },
     {
       path: '/components',
       name: 'components',
-      component: ProductVue,
+      component: ComponentsView,
     },
     {
       path: "/:pathMatch(.*)*",
