@@ -8,10 +8,13 @@ class ApiServices {
 
     constructor() {
         this.axiosInstance.interceptors.request.use(function (config) {
-            const token = localStorage.getItem('token');
-            if (!token) {
-                return config;
-            }
+            // const token = localStorage.getItem('token');
+            // if (!token) {
+            //     return config;
+            // }
+
+            // hard coded token
+            let token = "12|vfWfbndIvbhEfBPh7rgfSyv5DFASiwMbBmV5Owgc16150404"
             // console.log(token);
             config.headers.Authorization = `Bearer ${token}`;
             return config;
@@ -44,7 +47,9 @@ class ApiServices {
     //app api
     products = {
         getProuducts: (page) => this.axiosInstance.get('/api/products'),
-        getProuductsId: (id) => this.axiosInstance.get('/api/products/' + id)
+        getProuductsId: (id) => this.axiosInstance.get('/api/products/' + id),
+        adminPendingProducts: () => this.axiosInstance.get('/api/admin/pending'),
+        adminApproveProducts: (id) => this.axiosInstance.post('api/admin/approve/' + id),
     }
 }
 

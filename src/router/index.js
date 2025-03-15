@@ -1,11 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ComponentsView from '@/views/ComponentsView.vue'
-import ProductVue from '@/components/Products/ProductVue.vue'
 import ProductID from '@/components/Products/ProductID.vue'
 import NotFoundVue from '@/components/NotFoundVue.vue'
-import AdminView from '@/views/AdminView.vue'
-import TestView from '@/views/TestView.vue'
+import PendingProducts from '@/components/Admin/PendingProducts.vue'
+import ApprovedProducts from '@/components/Admin/ApprovedProducts.vue'
+import Dashbord from '@/components/Admin/Dashbord.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -25,18 +25,26 @@ const router = createRouter({
       name: 'products',
       component: ProductID
     },
+
+
     {
       path: '/admin',
       name: 'admin',
-      component: TestView,
+      component: Dashbord,
       meta: { layout: 'admin' },
       children: [
         {
-          path: 'inbox', component: TestView,
+          path: 'pending', component: PendingProducts,
+          meta: { layout: 'admin' }
+        },
+        {
+          path: 'approved', component: ApprovedProducts,
           meta: { layout: 'admin' }
         },
       ],
     },
+
+
     {
       path: '/components',
       name: 'components',
