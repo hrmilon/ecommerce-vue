@@ -10,5 +10,6 @@ import AppSidebar from "@/components/AppSidebar.vue";
       <SidebarTrigger />
       <slot />
     </main>
+    <RouterView />
   </SidebarProvider>
 </template>

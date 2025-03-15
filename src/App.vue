@@ -3,10 +3,11 @@ import { RouterLink, RouterView, useRoute } from 'vue-router'
 import AdminView from './views/AdminView.vue';
 import { computed } from 'vue';
 import DefaultLayout from './layout/DefaultLayout.vue';
+import AdminLayout from './layout/AdminLayout.vue';
 
 const route = useRoute();
 const layoutComponent = computed(() =>
-  route.meta.layout === 'admin' ? AdminView : DefaultLayout
+  route.meta.layout === 'admin' ? AdminLayout : DefaultLayout
 );
 </script>
 
