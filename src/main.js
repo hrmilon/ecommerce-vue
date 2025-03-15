@@ -17,6 +17,6 @@ app.use(router)
 
 app.mount('#app')
 
-//checking api response
-// apiServices.products.getProuducts()
+// checking api response
+// apiServices.products.adminApproveProducts(1)
 // .then(r => console.log(r.data))

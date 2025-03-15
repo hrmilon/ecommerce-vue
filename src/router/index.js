@@ -5,6 +5,7 @@ import ProductID from '@/components/Products/ProductID.vue'
 import NotFoundVue from '@/components/NotFoundVue.vue'
 import PendingProducts from '@/components/Admin/PendingProducts.vue'
 import ApprovedProducts from '@/components/Admin/ApprovedProducts.vue'
+import Dashbord from '@/components/Admin/Dashbord.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,7 +30,7 @@ const router = createRouter({
     {
       path: '/admin',
       name: 'admin',
-      component: PendingProducts,
+      component: Dashbord,
       meta: { layout: 'admin' },
       children: [
         {

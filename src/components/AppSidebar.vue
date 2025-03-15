@@ -57,21 +57,21 @@ const data = {
   ],
   navMain: [
     {
-      title: 'Playground',
+      title: 'Products',
       url: '#',
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: 'History',
-          url: '#',
+          title: 'Pending',
+          url: 'pending',
         },
         {
-          title: 'Starred',
-          url: '#',
+          title: 'Approved',
+          url: 'approved',
         },
         {
-          title: 'Settings',
+          title: 'Categories',
           url: '#',
         },
       ],

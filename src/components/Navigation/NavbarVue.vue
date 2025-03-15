@@ -64,7 +64,7 @@ const components: { title: string, href: string, description: string }[] = [
         <NavigationMenuItem class="mr-32">
           <NavigationMenuLink>
             <RouterLink class="flex justify-center items-center" to="/">
-              <div class="font-extrabold text-2xl">
+              <div class="font-extrabold italic">
                 E-Order
               </div>
             </RouterLink>
