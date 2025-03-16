@@ -23,12 +23,6 @@ onMounted(() => {
     productsStore.apiGetProductsId(productId)
 })
 
-// let skeleton = ref(true);
-
-// setTimeout(() => {
-//     skeleton.value = false
-// }, 5000);
-
 
 </script>
 

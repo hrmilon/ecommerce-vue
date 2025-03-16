@@ -1,4 +1,17 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
+import { 
+  ShoppingCart, 
+  User,
+  Home,
+  Store,
+  LayoutGrid,
+  Shield,
+  Building
+} from 'lucide-vue-next'
+import { Input } from "@/components/ui/input"
+import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -8,152 +21,112 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-import { RouterLink } from 'vue-router';
-import SearchVue from './SearchVue.vue';
-import { ShoppingCart, LogIn, Menu } from 'lucide-vue-next';
 
-const components: { title: string, href: string, description: string }[] = [
-  {
-    title: 'Alert Dialog',
-    href: '/docs/components/alert-dialog',
-    description:
-      'A modal dialog that interrupts the user with important content and expects a response.',
-  },
-  {
-    title: 'Hover Card',
-    href: '/docs/components/hover-card',
-    description:
-      'For sighted users to preview content available behind a link.',
-  },
-  {
-    title: 'Progress',
-    href: '/docs/components/progress',
-    description:
-      'Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.',
-  },
-  {
-    title: 'Scroll-area',
-    href: '/docs/components/scroll-area',
-    description: 'Visually or semantically separates content.',
-  },
-  {
-    title: 'Tabs',
-    href: '/docs/components/tabs',
-    description:
-      'A set of layered sections of content—known as tab panels—that are displayed one at a time.',
-  },
-  {
-    title: 'Tooltip',
-    href: '/docs/components/tooltip',
-    description:
-      'A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.',
-  },
-]
+// Cart items count
+const cartItemsCount = ref(3)
 </script>
 
 <template>
-
-  <div>
-
-  </div>
-
-  <div class="flex justify-center items-center py-3">
-    <NavigationMenu>
-      <NavigationMenuList>
-
-        <NavigationMenuItem class="mr-32">
-          <NavigationMenuLink>
-            <RouterLink class="flex justify-center items-center" to="/">
-              <div class="font-extrabold text-2xl">
-                E-Order
-              </div>
-            </RouterLink>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink>
-            <!-- <RouterLink to="#">Products</RouterLink> -->
-            <SearchVue />
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <!-- category -->
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>Category</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-              <li v-for="component in components" :key="component.title">
+  <header class="bg-white">
+    <!-- Top Navigation Bar -->
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <!-- Logo -->
+      <RouterLink to="/" class="font-bold text-2xl">
+        <span class="font-extrabold ml-1">E-Order</span>
+      </RouterLink>
+      
+      <!-- Search Bar -->
+      <div class="flex-1 max-w-3xl mx-6">
+        <div class="flex">
+          <Input 
+            type="text" 
+            placeholder="Search in E-Order" 
+            class="w-full rounded-r-none bg-gray-100 border-0 focus:ring-0"
+          />
+          <Button class="bg-gray-900 hover:bg-gray-800 text-white px-6 rounded-l-none">
+            Search
+          </Button>
+        </div>
+      </div>
+      
+      <!-- Actions -->
+      <div class="flex items-center gap-6">
+        <!-- Cart -->
+        <RouterLink to="/cart" class="relative">
+          <ShoppingCart class="h-6 w-6" />
+          <span class="absolute -top-2 -right-2 bg-blue-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
+            {{ cartItemsCount }}
+          </span>
+        </RouterLink>
+        
+        <!-- User Account -->
+        <RouterLink to="/login" class="flex items-center gap-2">
+          <User class="h-6 w-6" />
+          <span class="hidden sm:inline">Sign in</span>
+        </RouterLink>
+      </div>
+    </div>
+    
+    <!-- Secondary Navigation -->
+    <div class="border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex justify-between">
+          <!-- Main Navigation Links -->
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
                 <NavigationMenuLink as-child>
-                  <RouterLink :to="component.href"
-                    class=" block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                    <div class="text-sm font-medium leading-none">{{ component.title }}</div>
-                    <p class="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      {{ component.description }}
-                    </p>
+                  <RouterLink to="/" class="flex items-center gap-2 py-3 px-4 hover:text-blue-500 transition-colors">
+                    <Home class="h-5 w-5" />
+                    <span>Home</span>
                   </RouterLink>
                 </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink :class="navigationMenuTriggerStyle()">
-            <RouterLink to="#">Products</RouterLink>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink :class="navigationMenuTriggerStyle()">
-            <RouterLink to="cart">
-              <ShoppingCart class="size-6 text-muted-foreground" />
-            </RouterLink>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuLink :class="navigationMenuTriggerStyle()">
-            <RouterLink to="login">
-              <div class="flex gap-x-2">
-                <div>
-                  <LogIn class="size-6 text-muted-foreground" />
-                </div>
-                <div>Sign In</div>
-              </div>
-
-            </RouterLink>
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-
-        <NavigationMenuItem>
-          <NavigationMenuTrigger></NavigationMenuTrigger>
-          <NavigationMenuContent>
-
-            <ul class="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] divide-x-2">
-              <li>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
                 <NavigationMenuLink as-child>
-                  <RouterLink to="admin"
-                    class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                    <div class="text-sm font-medium leading-none">Admin Login</div>
+                  <RouterLink to="/shops" class="flex items-center gap-2 py-3 px-4 hover:text-blue-500 transition-colors">
+                    <Store class="h-5 w-5" />
+                    <span>Shops</span>
                   </RouterLink>
                 </NavigationMenuLink>
-              </li>
-              <li>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
                 <NavigationMenuLink as-child>
-                  <RouterLink to="admin"
-                    class="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground">
-                    <div class="text-sm font-medium leading-none">Seller Login</div>
+                  <RouterLink to="/categories" class="flex items-center gap-2 py-3 px-4 hover:text-blue-500 transition-colors">
+                    <LayoutGrid class="h-5 w-5" />
+                    <span>Categories</span>
                   </RouterLink>
                 </NavigationMenuLink>
-              </li>
-            </ul>
-
-          </NavigationMenuContent>
-        </NavigationMenuItem>
-
-      </NavigationMenuList>
-    </NavigationMenu>
-  </div>
-
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          
+          <!-- Admin/Seller Links -->
+          <NavigationMenu>
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <NavigationMenuLink as-child>
+                  <RouterLink to="/admin" class="flex items-center gap-2 py-3 px-4 text-gray-600 hover:text-blue-500 transition-colors">
+                    <Shield class="h-4 w-4" />
+                    <span class="text-sm">Admin Login</span>
+                  </RouterLink>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+              
+              <NavigationMenuItem>
+                <NavigationMenuLink as-child>
+                  <RouterLink to="/seller" class="flex items-center gap-2 py-3 px-4 text-gray-600 hover:text-blue-500 transition-colors">
+                    <Building class="h-4 w-4" />
+                    <span class="text-sm">Seller Login</span>
+                  </RouterLink>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+        </div>
+      </div>
+    </div>
+  </header>
 </template>

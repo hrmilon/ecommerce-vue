@@ -23,7 +23,7 @@ onMounted(() => {
 			</div>
 		</div>
 	</div>
-	<div v-else class="grid grid-cols-1 md:grid md:grid-cols-4">
+	<div v-else class="px-12 flex flex-wrap max-w-screen-xl mx-auto">
 		<ProductVue v-for="product in getAllProducts" :key="product.id" :product="product" />
 	</div>
 </template>
