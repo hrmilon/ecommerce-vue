@@ -20,7 +20,7 @@ defineProps({
 
 <template>
     <!-- data showing -->
-    <div class="flex justify-center">
+    <div class="flex justify-center p-5">
         <Card class="p-5">
             <div class="flex">
                 <div class="w-1/2">

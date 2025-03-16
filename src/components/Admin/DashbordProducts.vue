@@ -42,7 +42,7 @@ onMounted(() => {
 
 <template>
     <Table class="w-11/12 ml-8">
-        <TableCaption>A list of your recent invoices.</TableCaption>
+        <TableCaption>Data Table</TableCaption>
         <TableHeader>
             <TableRow>
                 <TableHead>

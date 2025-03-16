@@ -15,7 +15,7 @@ export let useAdminStore = defineStore("products", {
       try {
         this.loading = true
         let products = await apiServices.products.adminPendingProducts();
-        console.log(products.data);
+        // console.log(products.data);
         
         return this.$state.pending = products.data
       }

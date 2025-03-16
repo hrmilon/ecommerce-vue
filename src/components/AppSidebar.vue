@@ -22,7 +22,22 @@ import {
   PieChart,
   Settings2,
   SquareTerminal,
+  ShoppingCart,
+  LayoutDashboard,
+  LayoutDashboardIcon,
+  ChartBarStacked,
+  Ship,
+  Truck,
+  Users,
+  Component
 } from 'lucide-vue-next';
+
+import SidebarGroup from './ui/sidebar/SidebarGroup.vue';
+import SidebarGroupLabel from './ui/sidebar/SidebarGroupLabel.vue';
+import SidebarGroupContent from './ui/sidebar/SidebarGroupContent.vue';
+import SidebarMenu from './ui/sidebar/SidebarMenu.vue';
+import SidebarMenuItem from './ui/sidebar/SidebarMenuItem.vue';
+import SidebarMenuButton from './ui/sidebar/SidebarMenuButton.vue';
 
 const props = defineProps({
   side: { type: String, required: false },
@@ -54,112 +69,41 @@ const data = {
       logo: Command,
       plan: 'Free',
     },
-  ],
-  navMain: [
-    {
-      title: 'Products',
-      url: '#',
-      icon: SquareTerminal,
-      isActive: true,
-      items: [
-        {
-          title: 'Pending',
-          url: 'pending',
-        },
-        {
-          title: 'Approved',
-          url: 'approved',
-        },
-        {
-          title: 'Categories',
-          url: '#',
-        },
-      ],
-    },
-    {
-      title: 'Models',
-      url: '#',
-      icon: Bot,
-      items: [
-        {
-          title: 'Genesis',
-          url: '#',
-        },
-        {
-          title: 'Explorer',
-          url: '#',
-        },
-        {
-          title: 'Quantum',
-          url: '#',
-        },
-      ],
-    },
-    {
-      title: 'Documentation',
-      url: '#',
-      icon: BookOpen,
-      items: [
-        {
-          title: 'Introduction',
-          url: '#',
-        },
-        {
-          title: 'Get Started',
-          url: '#',
-        },
-        {
-          title: 'Tutorials',
-          url: '#',
-        },
-        {
-          title: 'Changelog',
-          url: '#',
-        },
-      ],
-    },
-    {
-      title: 'Settings',
-      url: '#',
-      icon: Settings2,
-      items: [
-        {
-          title: 'General',
-          url: '#',
-        },
-        {
-          title: 'Team',
-          url: '#',
-        },
-        {
-          title: 'Billing',
-          url: '#',
-        },
-        {
-          title: 'Limits',
-          url: '#',
-        },
-      ],
-    },
-  ],
-  projects: [
-    {
-      name: 'Design Engineering',
-      url: '#',
-      icon: Frame,
-    },
-    {
-      name: 'Sales & Marketing',
-      url: '#',
-      icon: PieChart,
-    },
-    {
-      name: 'Travel',
-      url: '#',
-      icon: Map,
-    },
-  ],
+  ]
 };
+
+const items = [
+  {
+    title: "Dashboard",
+    url: "#",
+    icon: LayoutDashboardIcon,
+  },
+  {
+    title: "Products",
+    url: "pending",
+    icon: ShoppingCart,
+  },
+  {
+    title: "Categories",
+    url: "approved",
+    icon: ChartBarStacked,
+  },
+  {
+    title: "Orders",
+    url: "#",
+    icon: Truck,
+  },
+  {
+    title: "Customer",
+    url: "#",
+    icon: Users,
+  },
+  {
+    title: "Coupon",
+    url: "#",
+    icon: Component,
+  },
+];
 </script>
 
 <template>
@@ -167,10 +111,25 @@ const data = {
     <SidebarHeader>
       <TeamSwitcher :teams="data.teams" />
     </SidebarHeader>
+
     <SidebarContent>
-      <NavMain :items="data.navMain" />
-      <NavProjects :projects="data.projects" />
+      <SidebarGroup>
+        <SidebarGroupLabel>Adminstrator</SidebarGroupLabel>
+        <SidebarGroupContent>
+          <SidebarMenu>
+            <SidebarMenuItem v-for="item in items" :key="item.title">
+              <SidebarMenuButton asChild>
+                <RouterLink :to="item.url">
+                  <component :is="item.icon" />
+                  <span>{{ item.title }}</span>
+                </RouterLink>
+              </SidebarMenuButton>
+            </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroupContent>
+      </SidebarGroup>
     </SidebarContent>
+    
     <SidebarFooter>
       <NavUser :user="data.user" />
     </SidebarFooter>

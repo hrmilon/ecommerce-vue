@@ -3,9 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ComponentsView from '@/views/ComponentsView.vue'
 import ProductID from '@/components/Products/ProductID.vue'
 import NotFoundVue from '@/components/NotFoundVue.vue'
-import PendingProducts from '@/components/Admin/PendingProducts.vue'
 import ApprovedProducts from '@/components/Admin/ApprovedProducts.vue'
 import Dashbord from '@/components/Admin/Dashbord.vue'
+import DashbordProducts from '@/components/Admin/DashbordProducts.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,11 +34,11 @@ const router = createRouter({
       meta: { layout: 'admin' },
       children: [
         {
-          path: 'pending', component: PendingProducts,
+          path: 'products', component: DashbordProducts,
           meta: { layout: 'admin' }
         },
         {
-          path: 'approved', component: ApprovedProducts,
+          path: 'orders', component: ApprovedProducts,
           meta: { layout: 'admin' }
         },
       ],
