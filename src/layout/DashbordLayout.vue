@@ -40,7 +40,7 @@ import DashbordHomeVue from '../components/Admin/DashbordHomeVue.vue'
             <BreadcrumbList>
               <BreadcrumbItem class="hidden md:block">
                 <BreadcrumbLink href="#">
-                  Building Your Application
+                  Adminstrator
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator class="hidden md:block" />

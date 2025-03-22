@@ -38,6 +38,8 @@ import SidebarGroupContent from './ui/sidebar/SidebarGroupContent.vue';
 import SidebarMenu from './ui/sidebar/SidebarMenu.vue';
 import SidebarMenuItem from './ui/sidebar/SidebarMenuItem.vue';
 import SidebarMenuButton from './ui/sidebar/SidebarMenuButton.vue';
+import { useRoute } from 'vue-router';
+import { ref, watch } from 'vue'
 
 const props = defineProps({
   side: { type: String, required: false },
@@ -49,27 +51,10 @@ const props = defineProps({
 // This is sample data.
 const data = {
   user: {
-    name: 'shadcn',
-    email: 'm@example.com',
+    name: 'steve',
+    email: 'steve@example.com',
     avatar: '/avatars/shadcn.jpg',
-  },
-  teams: [
-    {
-      name: 'Acme Inc',
-      logo: GalleryVerticalEnd,
-      plan: 'Enterprise',
-    },
-    {
-      name: 'Acme Corp.',
-      logo: AudioWaveform,
-      plan: 'Startup',
-    },
-    {
-      name: 'Evil Corp.',
-      logo: Command,
-      plan: 'Free',
-    },
-  ]
+  }
 };
 
 const items = [
@@ -80,17 +65,17 @@ const items = [
   },
   {
     title: "Products",
-    url: "pending",
+    url: "products",
     icon: ShoppingCart,
   },
   {
     title: "Categories",
-    url: "approved",
+    url: "categories",
     icon: ChartBarStacked,
   },
   {
     title: "Orders",
-    url: "#",
+    url: "orders",
     icon: Truck,
   },
   {
@@ -104,13 +89,11 @@ const items = [
     icon: Component,
   },
 ];
+
 </script>
 
 <template>
   <Sidebar v-bind="props">
-    <SidebarHeader>
-      <TeamSwitcher :teams="data.teams" />
-    </SidebarHeader>
 
     <SidebarContent>
       <SidebarGroup>
@@ -119,7 +102,7 @@ const items = [
           <SidebarMenu>
             <SidebarMenuItem v-for="item in items" :key="item.title">
               <SidebarMenuButton asChild>
-                <RouterLink :to="item.url">
+                <RouterLink :to="`/admin/${item.url}`"> 
                   <component :is="item.icon" />
                   <span>{{ item.title }}</span>
                 </RouterLink>
@@ -129,7 +112,7 @@ const items = [
         </SidebarGroupContent>
       </SidebarGroup>
     </SidebarContent>
-    
+
     <SidebarFooter>
       <NavUser :user="data.user" />
     </SidebarFooter>

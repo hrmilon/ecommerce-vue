@@ -7,13 +7,23 @@ import Toaster from '@/components/ui/toast/Toaster.vue';
 </script>
 
 <template>
-      <header>
-    <SalesTop />
-    <div class="wrapper">
-      <NavbarVue />
-    </div>
-  </header>
-  <Toaster />
-  <RouterView />
-  <FooterVue />
+  <!-- if error comes from admin url -->
+  <div v-if="$route.path.startsWith('/admin/')">
+    <RouterView />
+  </div>
+
+
+  <!-- regular layout -->
+  <div v-else>
+    <header>
+      <SalesTop />
+      <div class="wrapper">
+        <NavbarVue />
+      </div>
+    </header>
+    <Toaster />
+    <RouterView />
+    <FooterVue />
+  </div>
+
 </template>

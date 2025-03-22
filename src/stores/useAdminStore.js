@@ -5,8 +5,8 @@ import { defineStore } from "pinia";
 export let useAdminStore = defineStore("products", {
   state: () => {
     return {
-      pending: Array,
-      singleProduct: Array,
+      pending: [],
+      singleProduct: [],
       loading: false
     }
   },
@@ -15,8 +15,6 @@ export let useAdminStore = defineStore("products", {
       try {
         this.loading = true
         let products = await apiServices.products.adminPendingProducts();
-        // console.log(products.data);
-        
         return this.$state.pending = products.data
       }
       catch (error) {
@@ -30,8 +28,6 @@ export let useAdminStore = defineStore("products", {
       try {
         this.loading = true
         let product = await apiServices.products.adminApproveProducts(id);
-        console.log(product.data);
-        
         return this.$state.singleProduct = product.data
       } catch (error) {
         return error;
