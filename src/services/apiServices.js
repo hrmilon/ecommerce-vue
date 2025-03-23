@@ -1,9 +1,10 @@
 import axios from "axios";
+const apiUrl = import.meta.env.VITE_LARAVEL_BACKEND_API;
 
 class ApiServices {
 
     axiosInstance = axios.create({
-        baseURL: 'http://localhost:8000'
+        baseURL: apiUrl
     })
 
     constructor() {
@@ -14,7 +15,7 @@ class ApiServices {
             // }
 
             // hard coded token
-            let token = "12|vfWfbndIvbhEfBPh7rgfSyv5DFASiwMbBmV5Owgc16150404"
+            let token = "1|oxsuNsJbIWIE8qCmx0x4x9PbRyXRNJn3LfZAVu5u52c6b03b"
             // console.log(token);
             config.headers.Authorization = `Bearer ${token}`;
             return config;
