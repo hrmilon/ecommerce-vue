@@ -17,11 +17,21 @@ const { toast } = useToast()
 let isHovered = ref(false)
 
 let addedToCart = (id) => {
+	// retrieved and add new one
 	let arr = JSON.parse(localStorage.getItem("ProductsId")) || [];
-	arr.push(id)
+    if(!arr.includes(id)) arr.push(id);
+	
 	localStorage.setItem("ProductsId", JSON.stringify(arr))
-	let local = localStorage.getItem("ProductsId")
-	console.log(JSON.parse(local));
+
+	//debugging
+	// let local = localStorage.getItem("ProductsId")
+	// console.log(JSON.parse(local));
+
+	//send toast msg to user
+	toast({
+		title: 'Added to cart',
+		description: 'Checkout in the cart',
+	});
 }
 
 let addedToFav = () => console.log("Favourite added")
@@ -62,7 +72,7 @@ let toastedMsg = () => {
 			</RouterLink>
 
 			<CardFooter class="p-4 pt-0">
-				<Button @click="toastedMsg" class="w-full transition-all duration-300 group-hover:bg-primary/90">
+				<Button @click="addedToCart(product.id)" class="w-full transition-all duration-300 group-hover:bg-primary/90">
 					<ShoppingCart class="h-4 w-4 mr-2" />
 					Add to Cart
 				</Button>
