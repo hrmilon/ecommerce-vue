@@ -69,7 +69,6 @@ const selectedIds = computed(() =>
 </script>
 
 <template>
-    {{ selectedIds }}
     <div class="flex items-center justify-center mt-6 py-10 px-4">
         <Card class="w-full max-w-3xl shadow-lg p-10">
             <CardHeader class="border-b">
