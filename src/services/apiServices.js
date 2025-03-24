@@ -9,15 +9,14 @@ class ApiServices {
 
     constructor() {
         this.axiosInstance.interceptors.request.use(function (config) {
-            // const token = localStorage.getItem('token');
-            // if (!token) {
+            // const token = localStorage.getItem('customerToken');
+            // if (!customerToken) {
             //     return config;
             // }
+            // config.headers.Authorization = `Bearer ${customerToken}`;
 
             // hard coded token
-            let token = "1|oxsuNsJbIWIE8qCmx0x4x9PbRyXRNJn3LfZAVu5u52c6b03b"
-            // console.log(token);
-            config.headers.Authorization = `Bearer ${token}`;
+            // let token = "1|oxsuNsJbIWIE8qCmx0x4x9PbRyXRNJn3LfZAVu5u52c6b03b"
             return config;
         }, function (error) {
             return Promise.reject(error);
@@ -41,7 +40,10 @@ class ApiServices {
 
     //authentication
     auth = {
-        login: (payload) => this.axiosInstance.post('/api/login', payload),
+        customerLogin: (payload) => this.axiosInstance.post('/api/auth/customer/login', payload, {
+            headers: { "Content-Type": "multipart/form-data" }
+        }),
+
         logout: () => this.axiosInstance.post('/auth/logout'),
     }
 
