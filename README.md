@@ -39,4 +39,4 @@ Features:
 - add `.env` file 
 - add a key `VITE_LARAVEL_BACKEND_API = 'Your host link of backend mentioned' `
 
-N.B - configure the backend api based on the backend repository provided at the top.
+N.B - configure the backend api based on the backend repository provided at the top..
