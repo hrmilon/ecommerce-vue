@@ -9,11 +9,11 @@ class ApiServices {
 
     constructor() {
         this.axiosInstance.interceptors.request.use(function (config) {
-            // const token = localStorage.getItem('customerToken');
-            // if (!customerToken) {
-            //     return config;
-            // }
-            // config.headers.Authorization = `Bearer ${customerToken}`;
+            const customerToken = localStorage.getItem('customerToken');
+            if (!customerToken) {
+                return config;
+            }
+            config.headers.Authorization = `Bearer ${customerToken}`;
 
             // hard coded token
             // let token = "1|oxsuNsJbIWIE8qCmx0x4x9PbRyXRNJn3LfZAVu5u52c6b03b"

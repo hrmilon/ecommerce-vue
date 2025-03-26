@@ -16,12 +16,6 @@
 
     let cartStore = useCartStore()
     let cartItems = computed(() => cartStore.getCheckoutPage)
-    // Assume cart data is passed from previous page
-    // const cartItems = ref([
-    //     { id: 1, name: 'Basic T-Shirt', price: 19.99, quantity: 2 },
-    //     { id: 2, name: 'Premium Hoodie', price: 49.99, quantity: 1 },
-    //     { id: 3, name: 'Denim Jeans', price: 39.99, quantity: 1 },
-    // ])
 
     // Address form data
     const address = ref({

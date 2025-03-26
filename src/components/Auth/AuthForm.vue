@@ -28,7 +28,6 @@ let localForm = async () => {
 
 </script>
 <template>
-  {{ authStore.doesCustomerAuthHasError }}
   <div class="flex flex-col gap-6">
     <Card>
       <CardHeader class="text-center">
@@ -66,6 +65,10 @@ let localForm = async () => {
                 Or continue with
               </span>
             </div>
+            <div v-if="authStore.doesCustomerAuthHasError">
+              {{ authStore.doesCustomerAuthHasError }}
+            </div>
+
             <div class="grid gap-6">
               <div class="grid gap-2">
                 <Label html-for="email">Email</Label>

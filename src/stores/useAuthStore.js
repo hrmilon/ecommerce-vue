@@ -7,8 +7,8 @@ export let useAuthStore = defineStore('auth', {
         return {
             adminAuth: true,
             sellerAuth: false,
-            customerAuth: false,
-
+            // customerAuth: false,
+            token: localStorage.getItem('customerToken') || null,
             customerAuthError: []
         }
     },
@@ -18,7 +18,10 @@ export let useAuthStore = defineStore('auth', {
             try {
                 let login = await apiServices.auth.customerLogin(payload)
                 if (login.data) {
-                    console.log(login)
+                    localStorage.setItem('customerToken', login.data.token)
+                    return this.token = login.data.token;
+                    // console.log(login.data.token)
+                    // this.customerAuth = true
                 } else {
                     throw new Error("Credentials Error has occured")
                 }
@@ -36,11 +39,11 @@ export let useAuthStore = defineStore('auth', {
         },
 
         isCustomerAuthenticated(state) {
-            return state.customerAuth;
+            return state.token || null;
         },
 
         doesCustomerAuthHasError(state) {
             return state.customerAuthError;
-        }
+        },
     }
 })

@@ -21,9 +21,11 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
-
+import { useAuthStore } from '@/stores/useAuthStore'
+import Avatar from '../ui/avatar/Avatar.vue'
+let authStore = useAuthStore()
 // Cart items count
-const cartItemsCount = ref(3)
+const cartItemsCount = ref('*')
 </script>
 
 <template>
@@ -58,9 +60,14 @@ const cartItemsCount = ref(3)
         </RouterLink>
 
         <!-- User Account -->
-        <RouterLink :to="{ name: 'customer-login' }" class="flex items-center gap-2">
+        <RouterLink v-if="!authStore.isCustomerAuthenticated" :to="{ name: 'customer-login' }"
+          class="flex items-center gap-2">
           <User class="h-6 w-6" />
           <span class="hidden sm:inline">Sign in</span>
+        </RouterLink>
+        <RouterLink v-else
+          class="flex items-center gap-2">
+          <Avatar class="h-10 w-10" >Steve</Avatar>
         </RouterLink>
       </div>
     </div>
