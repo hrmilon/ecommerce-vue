@@ -19,8 +19,8 @@ let isHovered = ref(false)
 let addedToCart = (id) => {
 	// retrieved and add new one
 	let arr = JSON.parse(localStorage.getItem("ProductsId")) || [];
-    if(!arr.includes(id)) arr.push(id);
-	
+	if (!arr.includes(id)) arr.push(id);
+
 	localStorage.setItem("ProductsId", JSON.stringify(arr))
 
 	//debugging
@@ -58,6 +58,13 @@ let toastedMsg = () => {
 				<Heart class="h-4 w-4 text-primary" />
 			</button>
 
+			<!-- Add to Cart button under Favorite button -->
+			<Button v-if="isHovered" @click="addedToCart(product.id)"
+				class="absolute bottom-1/3 left-1/2 transform -translate-x-1/2 z-10 p-1.5 bg-primary text-white rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+				<ShoppingCart class="h-4 w-4 mr-2" />
+				Add to Cart
+			</Button>
+
 			<RouterLink :to="{ name: 'products', params: { id: product.id } }">
 				<div class="overflow-hidden">
 					<img loading="lazy"
@@ -70,13 +77,6 @@ let toastedMsg = () => {
 					<CardDescription class="font-semibold text-primary text-lg">${{ product.price }}</CardDescription>
 				</CardHeader>
 			</RouterLink>
-
-			<CardFooter class="p-4 pt-0">
-				<Button @click="addedToCart(product.id)" class="w-full transition-all duration-300 group-hover:bg-primary/90">
-					<ShoppingCart class="h-4 w-4 mr-2" />
-					Add to Cart
-				</Button>
-			</CardFooter>
 		</Card>
 	</div>
 </template>

@@ -36,6 +36,15 @@ const router = createRouter({
         {
           path: 'admin',
           component: () => import('@/components/Auth/AuthVue.vue'),
+        },
+        {
+          path: 'seller',
+          component: () => import('@/components/Auth/AuthVue.vue'),
+        },
+        {
+          path: 'login',
+          name: 'customer-login',
+          component: () => import('@/components/Auth/AuthVue.vue'),
         }
       ]
     },
